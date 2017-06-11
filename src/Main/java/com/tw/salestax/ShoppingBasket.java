@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ShoppingBasket {
     List<Item> items;
-    SalesTax salesTax;
     String[] itemDetails;
     public static ArrayList<String> products = new ArrayList<>();
+    SalesTax salesTax;
 
     ShoppingBasket(String[] itemDetails) {
         if(itemDetails==null){
@@ -16,7 +16,6 @@ public class ShoppingBasket {
         this.itemDetails = itemDetails;
         items = new ArrayList<Item>();
         products = new ArrayList<>();
-        new SalesTax(items);
     }
 
     public static void productsNotTaxable(){
