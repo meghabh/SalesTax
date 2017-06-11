@@ -9,7 +9,7 @@ import static junit.framework.TestCase.assertEquals;
 public class SalesTaxTest{
     @Test
     public void taxShouldNotBeApplicableOnExemptedItems() {
-        String[] itemDetails = {"1 book at 12.49"};
+        ArrayList<String> itemDetails=new ArrayList<>(Arrays.asList("1 book at 12.49"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
         shoppingBasket.createItem();
         SalesTax salesTax = new SalesTax(shoppingBasket.getItemList());
@@ -19,7 +19,7 @@ public class SalesTaxTest{
     }
     @Test
     public void taxShouldBeApplicableOnImportedItems(){
-        String[] itemDetails = {"1 imported box of chocolates at 10.00"};
+        ArrayList<String> itemDetails=new ArrayList<>(Arrays.asList("1 imported box of chocolates at 10.00"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
         shoppingBasket.createItem();
         SalesTax salesTax = new SalesTax(shoppingBasket.getItemList());
@@ -28,7 +28,7 @@ public class SalesTaxTest{
     }
     @Test
     public  void taxShouldBeApplicableOnNonExemptedItems(){
-        String[] itemDetails = {"1 music CD at 14.99"};
+        ArrayList<String> itemDetails=new ArrayList<>(Arrays.asList("1 music CD at 14.99"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
         shoppingBasket.createItem();
         SalesTax salesTax = new SalesTax(shoppingBasket.getItemList());
@@ -38,7 +38,7 @@ public class SalesTaxTest{
     }
     @Test
     public void shouldCalculateTotalPrice(){
-        String[] itemDetails={"1 imported box of chocolates at 10.00","1 imported bottle of perfume at 47.50"};
+        ArrayList<String> itemDetails=new ArrayList<>(Arrays.asList("1 imported box of chocolates at 10.00","1 imported bottle of perfume at 47.50"));
         ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
         shoppingBasket.createItem();
         SalesTax salesTax = new SalesTax(shoppingBasket.getItemList());
@@ -48,7 +48,7 @@ public class SalesTaxTest{
     }
    @Test
     public void shouldGenerateReciept(){
-       String[] itemDetails = {"1 book at 12.49"};
+       ArrayList<String> itemDetails=new ArrayList<>(Arrays.asList("1 book at 12.49"));
        ShoppingBasket shoppingBasket = new ShoppingBasket(itemDetails);
        shoppingBasket.createItem();
        SalesTax salesTax = new SalesTax(shoppingBasket.getItemList());

@@ -23,7 +23,7 @@ public class SalesTax {
             item.setPrice(item.getPrice() + salestax);
             item.setSalesTax(salestax);
             totalSalesTax = totalSalesTax + salestax;
-            totalPrice = totalPrice + item.getPrice();
+            totalPrice = item.getQuantity()*(totalPrice + item.getPrice());
             totalPrice = Double.parseDouble(String.format("%.2f", totalPrice));
         }
     }

@@ -5,14 +5,12 @@ import java.util.List;
 
 public class ShoppingBasket {
     List<Item> items;
-    String[] itemDetails;
+    ArrayList<String> itemDetails;
+   // String[] itemDetails;
     public static ArrayList<String> products = new ArrayList<>();
     SalesTax salesTax;
 
-    ShoppingBasket(String[] itemDetails) {
-        if(itemDetails==null){
-            
-        }
+    ShoppingBasket(ArrayList<String> itemDetails) {
         this.itemDetails = itemDetails;
         items = new ArrayList<Item>();
         products = new ArrayList<>();
