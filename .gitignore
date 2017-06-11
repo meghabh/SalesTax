@@ -1,5 +1,7 @@
 /out 
 build
-gradle
-.idea
+/.gradle
+/.idea
 workspace.xml
+
+

@@ -1,18 +1,30 @@
 package com.tw.salestax;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class SalesTax {
+    List<Item> items;
     CalculateTax calculateTax;
-   // ArrayList<String>  ItemList=new ArrayList<>();
-    SalesTax(String[] itemDetails){
-        calculateTax=new CalculateTax(itemDetails);
+
+    SalesTax(List<Item> items) {
+        this.items = items;
+        calculateTax = new CalculateTax(items);
     }
-    public ArrayList<String> printReciept() {
-        calculateTax.calculateTotalPrice();
-        return calculateTax.getReciept();
+
+    public void calculateBill() {
+        calculateTax.calculateTotalPrice(items);
+    }
+
+    public double getSalesTax() {
+        return calculateTax.getSalestax();
+    }
+
+    public double getTotalPrice() {
+        return calculateTax.getTotalPrice();
     }
 
 
 
 }
+
+
